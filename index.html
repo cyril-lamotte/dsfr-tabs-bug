@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSFR Tab bug</title>
+  <link rel="stylesheet" href="dsfr/dsfr.min.css">
+</head>
+<body>
+
+  <style>
+
+    body {
+      padding: 10px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin-inline: auto;
+    }
+
+  </style>
+
+  <h1>DSFR Bug</h1>
+
+  <div class="container">
+
+    <button class="fr-btn" id="show">Afficher masquer</button>
+
+    <br><br>
+
+    <div style="display: none;" id="tabs">
+
+      <div class="fr-tabs">
+        <ul class="fr-tabs__list" role="tablist" aria-label="[A modifier | nom du système d'onglet]">
+            <li role="presentation">
+                <button id="tabpanel-404" class="fr-tabs__tab fr-icon-checkbox-line fr-tabs__tab--icon-left" tabindex="0" role="tab" aria-selected="true" aria-controls="tabpanel-404-panel">Label Tab 1</button>
+            </li>
+            <li role="presentation">
+                <button id="tabpanel-405" class="fr-tabs__tab fr-icon-checkbox-line fr-tabs__tab--icon-left" tabindex="-1" role="tab" aria-selected="false" aria-controls="tabpanel-405-panel">Label Tab 2</button>
+            </li>
+            <li role="presentation">
+                <button id="tabpanel-406" class="fr-tabs__tab fr-icon-checkbox-line fr-tabs__tab--icon-left" tabindex="-1" role="tab" aria-selected="false" aria-controls="tabpanel-406-panel">Label Tab 2</button>
+            </li>
+        </ul>
+        <div id="tabpanel-404-panel" class="fr-tabs__panel fr-tabs__panel--selected" role="tabpanel" aria-labelledby="tabpanel-404" tabindex="0">
+            <!-- données de test -->
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam laboriosam est architecto aperiam omnis blanditiis sapiente ex! Repudiandae voluptas, tempora omnis rem architecto illum, maxime dolorem, soluta non autem nihil! Consectetur enim numquam hic quae excepturi possimus doloribus voluptate mollitia, voluptates nihil recusandae repellat iusto fugiat sequi saepe esse alias.</p>
+          <button class="fr-btn">Visible ?</button>
+        </div>
+        <div id="tabpanel-405-panel" class="fr-tabs__panel" role="tabpanel" aria-labelledby="tabpanel-405" tabindex="0">
+            <!-- données de test -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque perferendis ipsum vel incidunt accusamus quod fugiat saepe voluptates? Veniam, ut laborum. Ducimus ut voluptatum doloremque maxime numquam corporis ratione? Asperiores provident consequuntur et cum dolor itaque nisi in ea dolorum facilis id quam vel quos repudiandae distinctio ullam reiciendis numquam reprehenderit, tenetur incidunt repellat nemo? Eum officia nulla asperiores quasi, consequatur inventore quibusdam eveniet praesentium a eaque ex voluptas. Omnis impedit officiis minima sit ab eum deserunt, aut placeat dignissimos voluptatibus inventore harum maiores repudiandae? Enim exercitationem nostrum quae, ab at ut sapiente numquam minus aliquam facere temporibus!</p>
+            <button class="fr-btn">Visible ?</button>
+        </div>
+        <div id="tabpanel-406-panel" class="fr-tabs__panel" role="tabpanel" aria-labelledby="tabpanel-406" tabindex="0">
+            <!-- données de test -->
+            <p>Contenu 3</p>
+            <button class="fr-btn">Visible ?</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="dsfr/dsfr.module.js"></script>
+  <script>
+
+    const button = document.getElementById('show');
+    const tabs = document.getElementById('tabs');
+
+    button.addEventListener('click', () => {
+      if (tabs.style.display === 'none') {
+        tabs.style.display = 'block';
+      } else {
+        tabs.style.display = 'none';
+      }
+    });
+
+
+  </script>
+
+</body>
+</html>
